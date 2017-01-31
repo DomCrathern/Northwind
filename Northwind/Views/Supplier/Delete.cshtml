@@ -97,7 +97,7 @@
 
         <div class="form-actions no-color">
             @Html.ActionLink("Cancel", "Index") |
-            <input type="submit" value="Delete" class="btn btn-default" />
+            <input type="submit" value="Delete" class="btn btn-default" onclick="return confirm('Are you sure you want to delete this Supplier?')"/>
         </div>
     }
 </div>
