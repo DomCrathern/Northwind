@@ -6,7 +6,6 @@
 
 <h2>@Html.DisplayFor(model => model.CompanyName)</h2>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
     <hr />
     <dl class="dl-horizontal">
@@ -96,7 +95,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            @Html.ActionLink("Cancel", "Index") |
+            @Html.ActionLink("Cancel", "Index")
             <input type="submit" value="Delete" class="btn btn-default" onclick="return confirm('Are you sure you want to delete this Supplier?')"/>
         </div>
     }
