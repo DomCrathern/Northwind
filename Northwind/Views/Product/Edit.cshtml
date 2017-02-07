@@ -4,7 +4,9 @@
     ViewBag.Title = "Edit Product";
 }
 
-<h2>@Html.DisplayFor(model => model.ProductName)</h2>
+<div class="page-header">
+    <h2>@Html.DisplayFor(model => model.ProductName)</h2>
+</div>
 
 @using (Html.BeginForm())
 {
@@ -92,9 +94,9 @@
         </div>
 
         <div class="form-group">
-            @Html.ActionLink("Cancel", "Index")
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+                <input type="submit" value="Save" class="btn btn-success" />
             </div>
         </div>
     </div>

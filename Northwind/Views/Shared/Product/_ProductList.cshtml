@@ -1,39 +1,13 @@
-﻿@model IPagedList<Product>
+﻿
+@model IPagedList<Product>
 
-@{
-    ViewBag.Title = "Products";
-}
-
-<div class="page-header">
-    <span class="glyphicon glyphicon-cutlery"></span><h1> @ViewBag.Title</h1>
-    @Html.ActionLink("Create New Product", "Create")
-</div>
-
-<div class="well well-sm">
-    <p>
-        <span class="glyphicon glyphicon-filter"></span><h5> Filter</h5>
-    </p>
-    @using (Html.BeginForm("Index", "Product", FormMethod.Get))
-    {
-        <p>
-            Name @Html.TextBox("searchTerm", ViewBag.CurrentSearchTerm as string)
-            <button type="submit" class="btn btn-info">
-                <span class="glyphicon glyphicon-search"></span> Search
-            </button>
-        </p>
-    }
-</div>
-
-<table class="table table-hover table-striped">
+<table class="table">
     <tr>
         <th>
             @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.SortOrder, currentSearchTerm = ViewBag.CurrentSearchTerm })
         </th>
         <th>
             Category
-        </th>
-        <th>
-            Supplier
         </th>
         <th></th>
     </tr>
@@ -46,9 +20,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Category.CategoryName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |

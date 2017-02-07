@@ -4,7 +4,9 @@
     ViewBag.Title = "Delete Product";
 }
 
-<h2>@Html.DisplayFor(model => model.ProductName)</h2>
+<div class="page-header">
+    <h2>@Html.DisplayFor(model => model.ProductName)</h2>
+</div>
 
 <div>
     <hr />
@@ -78,9 +80,9 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            @Html.ActionLink("Cancel", "Index") 
-            <input type="submit" value="Delete" class="btn btn-default" onclick="return confirm('Are you sure you want delete this product?')" />
+        <div class="form-actions">
+            @Html.ActionLink("Cancel", "Index", null, new { @class="btn btn-default" })
+            <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want delete this product?')" />
         </div>
     }
 </div>

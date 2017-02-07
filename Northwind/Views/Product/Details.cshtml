@@ -1,12 +1,14 @@
-﻿@model Northwind.Models.Product
+﻿@model Product
 
 @{
     ViewBag.Title = "Product Details";
 }
 
 <div>
-    <h2>@Html.DisplayFor(model => model.ProductName)</h2>
-    <hr />
+    <div class="page-header">
+        <h2>@Html.DisplayFor(model => model.ProductName)</h2>
+    </div>
+    
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Category.CategoryName)
@@ -74,6 +76,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Back", "Index") |
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID })
+    @Html.ActionLink("Back", "Index", null, new { @class = "btn btn-default" })
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-primary" })
 </p>
